@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Interview</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+   
+</head>
+
+<body ng-controller="finishController">
+    <div class="container">
+        <div class="row">
+            <h1>My Interview Portal</h1>
+            <hr>
+            <div class="col-md-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">{{testName}} - Result</div>
+                    <div class="panel-body">
+                        <center>
+                            <h2 class="">Total no of Questions: {{totque}}</h2>
+                            <h3 class="text-success">Correct Answers: {{correctAns}}
+                            <span class="text-danger">Wrong Answers: {{wrongAns}}</span></h3>
+                            <div >
+                                    <button type="button" class="btn btn-primary" ng-click="result()">Result</button>
+                                </div>
+                                    <div class="form-container" ng-show="resultValue">
+                                            <div class="form-group" style="width: 50%">
+                                                <h3>Employee Details</h3>
+                                                <table class="table  table-bordered text-center">
+                                
+                                                    <thead>
+                                                        <tr>
+                                
+                                
+                                                            <th>Correct Question</th>
+                                                            <th>Wrong Question</th>
+                                                            
+                                
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                       
+                                                         <tr ng-repeat="q in ques"> 
+                                                          
+                                                                    <td >{{q}}</td>
+                                                           
+                                                          
+                                                            <td >{{wrongQue[$index]}}</td>
+                                                           
+                                
+                                                            
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                
+                                            </div>  
+                                    </div>
+                        </center>
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /.container -->
+</body>
+
+</html>
