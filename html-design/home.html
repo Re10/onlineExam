@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Interview</title>
+
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <script src="./angular.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.22/angular-ui-router.min.js"></script>
+     <script src="./app.js"></script>
+     <script src="./controller/test.js"></script>
+     <script src="./controller/main.js"></script>
+     <script src="./controller/finish.js"></script>
+      <!-- toster file -->
+    <link rel="stylesheet" href="https://unpkg.com/angular-toastr/dist/angular-toastr.css" />
+    <script src="https://unpkg.com/angular-toastr/dist/angular-toastr.tpls.js"></script>
+    <link rel="stylesheet" href="./toster.css">
+    <!--  -->
+
+</head>
+
+<body>
+       
+    <div class="container">
+         
+            <form name="myForm">
+         
+        <div class="row">
+            <h1>My Interview Portal</h1>
+            <hr>
+            <div class="col-md-12">
+                <a ui-sref="main" ui-sref-active="active" class="btn btn-success">Choose test</a>
+            </div>
+        </div>
+
+      
+    </form>
+    </div>
+    <!-- /.container -->
+   
+    <div><ui-view></ui-view></div>
+    
+</body>
+
+</html>

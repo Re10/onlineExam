@@ -6,8 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Interview</title>
-    <script src="./angular.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.22/angular-ui-router.min.js"></script>
+    <!-- <script src="./angular.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.22/angular-ui-router.min.js"></script> -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="./toster.css">
 </head>
@@ -15,13 +15,13 @@
 <body ng-controller="testController">
     <div class="container">
         <p>{{msg}}</p>
-        <p>Timmer:<strong>{{min}}:{{counter}} </strong></p>
+        <p><span style="margin:5px; background-color: yellow; border:3px solid blue; padding: 4px;">Timmer:<strong>{{min}}:{{counter}} </strong></span></p>
         <div class="row">
             <h1>My Interview Portal</h1>
             <hr>
             <div class="col-md-12">
                 <div class="panel panel-default">
-                    <div class="panel-heading">AngularJS Test</div>
+                    <div class="panel-heading">{{testname}}</div>
                     <div class="panel-body">
                         <form name="myForm">
 
@@ -32,7 +32,7 @@
                                         value="option">{{o}}
                                 </label>
                             </div>
-                            <div class="checkbox" ng-show="multipleRes ==true" ng-repeat="o in options">
+                            <div class="checkbox" ng-show="multipleRes ==true" ng-repeat="o in options track by $index">
                                 <label>
                                     <input ng-model="option" ng-click="checkoptions($event,$index)" type="checkbox"
                                         name="option" value="option">{{o}}
@@ -43,8 +43,8 @@
                         </form>
                     </div>
                     <div class="panel-footer">
-                    
-                        <a ng-click="next(i)" ng-disabled="checked == false" class="btn btn-success">Next</a>
+                    <span style="color: brown;" ng-show="checked == false">Please select option</span>
+                        <a ng-click="next(i)" ng-show="checked == true" class="btn btn-success">Next</a>
                         <a ui-sref="finish" class="pull-right btn btn-danger">Finish</a>
 
                     </div>

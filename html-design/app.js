@@ -1,10 +1,11 @@
-var app = angular.module("myApp", ['toastr','ui.router']).config(($stateProvider, $httpProvider, $urlRouterProvider) => {
-    $stateProvider.state("main", {
+var app = angular.module("myApp", ['toastr','ui.router']).config(($stateProvider, $httpProvider, $urlRouterProvider,$templateFactoryProvider) => {
+//  $templateFactoryProvider.shouldUnsafelyUseHttp(false);  
+  $stateProvider.state("main", {
         url: "/main",
         templateUrl: "index.html",
         controller: "mainController",
         controllerAs: 'main'
-    }).state("test", {
+    }).state("test", {  
         url: "/test/:id",
         templateUrl: "test.html",
         controller: "testController",
